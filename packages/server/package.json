@@ -1,0 +1,37 @@
+{
+  "name": "fastify-prisma",
+  "version": "1.0.0",
+  "author": "Iftakharul Alam",
+  "license": "MIT",
+  "main": "src/router",
+  "private": true,
+  "scripts": {
+    "postinstall": "npx prisma generate",
+    "db:push": "npx prisma db push",
+    "db:pull": "npx prisma db pull",
+    "db:studio": "npx prisma studio",
+    "dev": "tsnd --respawn --transpile-only src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js"
+  },
+  "keywords": [],
+  "dependencies": {
+    "@fastify/cors": "^8.2.0",
+    "@fastify/helmet": "^10.1.0",
+    "@fastify/sensible": "^5.2.0",
+    "@prisma/client": "^5.4.2",
+    "@trpc/server": "^10.7.0",
+    "dotenv-cli": "^6.0.0",
+    "fastify": "^4.11.0",
+    "fastify-plugin": "^4.5.0",
+    "superjson": "^1.12.1",
+    "zod": "^3.20.2"
+  },
+  "devDependencies": {
+    "@types/node": "^18.14.6",
+    "pino-pretty": "^10.0.0",
+    "prisma": "^5.4.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.9.4"
+  }
+}
