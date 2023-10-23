@@ -1,7 +1,7 @@
 {
-  "name": "blog-trpc-next-nest",
+  "name": "monorepo-next-fastify",
   "version": "1.0.0",
-  "description": "the best way to create new things",
+  "description": "the best way to create something new",
   "private": true,
   "license": "MIT",
   "author": "Iftakharul Alam",
