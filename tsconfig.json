@@ -11,8 +11,9 @@
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "@backend/*": ["./packages/server/*"],
-      "@frontend/*": ["./packages/frontend/*"]
+      "@backend/*": ["./apps/server/*"],
+      "@frontend/*": ["./apps/frontend/*"],
+      "@database/*": ["./packages/database/*"]
     }
   },
   "exclude": ["node_modules"]

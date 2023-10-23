@@ -1,7 +1,8 @@
 import { inferAsyncReturnType } from '@trpc/server';
 import { CreateFastifyContextOptions } from '@trpc/server/adapters/fastify';
 // Reference required for compilation
-import prisma from './prisma';
+import db from '../../../../packages/database/utils/prisma';
+// import prisma from '@database/utils/prisma';
 
 // eslint-disable-next-line @typescript-eslint/require-await
 export async function createContextInner() {
@@ -11,9 +12,8 @@ export async function createContextInner() {
 // eslint-disable-next-line @typescript-eslint/require-await
 export async function createContext({ req, res }: CreateFastifyContextOptions) {
   const server = req.server;
-
   return {
-    db: prisma,
+    db,
     fastify: server,
     req,
     res,

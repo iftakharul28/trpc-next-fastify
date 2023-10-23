@@ -1,24 +1,25 @@
 {
   "name": "blog-trpc-next-nest",
   "version": "1.0.0",
-  "description": "",
+  "description": "the best way to create new things",
   "private": true,
+  "license": "MIT",
+  "author": "Iftakharul Alam",
   "main": "index.js",
   "workspaces": [
+    "apps/*",
     "packages/*"
   ],
   "scripts": {
     "dev": "npm-run-all --parallel server frontend",
-    "build:server": "yarn --cwd packages/server build",
-    "build:frontend": "yarn --cwd packages/frontend build",
-    "server": "yarn --cwd packages/server dev",
-    "frontend": "yarn --cwd packages/frontend dev",
-    "db:studio": "yarn --cwd packages/server db:studio",
-    "db:push": "yarn --cwd packages/server db:push",
-    "db:pull": "yarn --cwd packages/server db:pull"
+    "build:server": "yarn --cwd apps/server build",
+    "build:frontend": "yarn --cwd apps/frontend build",
+    "server": "yarn --cwd apps/server dev",
+    "frontend": "yarn --cwd apps/frontend dev",
+    "db:studio": "yarn --cwd packages/database db:studio",
+    "db:push": "yarn --cwd packages/database db:push",
+    "db:pull": "yarn --cwd packages/database db:pull"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "npm-run-all": "4.1.5"
   }
