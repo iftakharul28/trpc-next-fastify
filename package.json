@@ -11,11 +11,14 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "npm-run-all --parallel server frontend",
+    "dev": "npm-run-all --parallel server frontend dashboard",
     "build:server": "yarn --cwd apps/server build",
     "build:frontend": "yarn --cwd apps/frontend build",
+    "build:dashboard": "yarn --cwd apps/dashboard build",
     "server": "yarn --cwd apps/server dev",
     "frontend": "yarn --cwd apps/frontend dev",
+    "dashboard": "yarn --cwd apps/dashboard dev",
+    "db:generate": "yarn --cwd packages/database generate",
     "db:studio": "yarn --cwd packages/database db:studio",
     "db:push": "yarn --cwd packages/database db:push",
     "db:pull": "yarn --cwd packages/database db:pull"

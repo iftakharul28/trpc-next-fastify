@@ -21,7 +21,7 @@ export const POST = async (request: NextRequest) => {
         password: authData.password, // hashed by Lucia
       },
       attributes: {
-        username: authData.firstname,
+        username: authData.firstname.toLowerCase(),
         name: authData.firstname + ' ' + authData.lastname,
         email: authData.email,
       },
