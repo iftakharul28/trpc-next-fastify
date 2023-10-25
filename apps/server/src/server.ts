@@ -3,12 +3,11 @@ import cors from '@fastify/cors';
 import { fastifyTRPCPlugin } from '@trpc/server/adapters/fastify';
 import { build } from './app';
 import { createContext } from './utils/context';
-import { env } from './config/env';
-import { config } from './config/config';
 import { appRouter } from './routes';
-
+import { env } from 'config/env';
+import { config } from 'config/config';
 const app = build({
-  logger: config[env.NODE_ENV].logger,
+  logger: config[env.SERVER_NODE_ENV].logger,
 });
 
 app.register(fastifyTRPCPlugin, {
@@ -26,11 +25,11 @@ app.register(cors, {
 
 app.register(helmet);
 
-if (env.HOST) {
+if (env.SERVER_HOST) {
   app.listen(
     {
-      port: env.PORT,
-      host: env.HOST,
+      port: env.SERVER_PORT,
+      host: env.SERVER_HOST,
     },
     (err, _address) => {
       if (err) {
@@ -42,7 +41,7 @@ if (env.HOST) {
 } else {
   app.listen(
     {
-      port: env.PORT,
+      port: env.SERVER_PORT,
     },
     (err, _address) => {
       if (err) {

@@ -8,4 +8,13 @@ export const exampleRouter = router({
   user: publicProcedure.query(({ ctx, input }) => {
     return ctx.db.user.findMany();
   }),
+  add: publicProcedure
+    .input(
+      z.object({
+        title: z.string().nullish(),
+      })
+    )
+    .mutation(({ ctx, input }) => {
+      return input.title;
+    }),
 });

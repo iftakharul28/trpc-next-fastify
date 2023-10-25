@@ -13,7 +13,8 @@
     "paths": {
       "@backend/*": ["./apps/server/*"],
       "@frontend/*": ["./apps/frontend/*"],
-      "@database/*": ["./packages/database/*"]
+      "@packages/*": ["./packages/*"],
+      "@config/*": ["./config/*"]
     }
   },
   "exclude": ["node_modules"]

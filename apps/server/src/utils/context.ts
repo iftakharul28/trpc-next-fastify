@@ -2,7 +2,7 @@
 // import { CreateFastifyContextOptions } from '@trpc/server/adapters/fastify';
 // // Reference required for compilation
 // import db from '../../../../packages/database/utils/prisma';
-import prisma from '@database/utils/prisma';
+import prisma from 'packages/database/utils/prisma';
 
 // // eslint-disable-next-line @typescript-eslint/require-await
 // export async function createContextInner() {
