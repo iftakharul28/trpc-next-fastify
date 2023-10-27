@@ -12,10 +12,11 @@
     "config/*"
   ],
   "scripts": {
-    "dev": "npm-run-all --parallel dev:*",
+    "dev": "npm-run-all --parallel dev:* --print-label",
+    "build": "npm-run-all --parallel build:* --print-label",
+    "build:dashboard": "yarn --cwd apps/dashboard build",
     "build:server": "yarn --cwd apps/server build",
     "build:frontend": "yarn --cwd apps/frontend build",
-    "build:dashboard": "yarn --cwd apps/dashboard build",
     "dev:server": "yarn --cwd apps/server dev",
     "dev:frontend": "yarn --cwd apps/frontend dev",
     "dev:dashboard": "yarn --cwd apps/dashboard dev",

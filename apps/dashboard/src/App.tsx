@@ -1,6 +1,6 @@
 import { trpc } from './lib/trpc';
 function App() {
-  const { data: greeting } = trpc.example.hello.useQuery({ name: 'Iftakharul Alam' });
+  const { data: greeting } = trpc.example.hello.useQuery({ name: 'From Server' });
   const { data: user } = trpc.example.user.useQuery();
   const { mutate: add } = trpc.example.add.useMutation({
     onSuccess: (value) => {

@@ -4,8 +4,8 @@ import { fastifyTRPCPlugin } from '@trpc/server/adapters/fastify';
 import { build } from './app';
 import { createContext } from './utils/context';
 import { appRouter } from './routes';
-import { env } from 'config/env';
-import { config } from 'config/config';
+import { env } from '@packages/config/env';
+import { config } from '@packages/config/config';
 const app = build({
   logger: config[env.SERVER_NODE_ENV].logger,
 });
@@ -24,7 +24,9 @@ app.register(cors, {
 });
 
 app.register(helmet);
-
+app.get('/', async () => {
+  return { data: 'hello there' };
+});
 if (env.SERVER_HOST) {
   app.listen(
     {
