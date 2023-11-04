@@ -17,7 +17,6 @@ model User {
   username     String
   name         String?
   email        String?
-  Model        Model[]
   auth_session Session[]
   key          Key[]
 
@@ -42,50 +41,3 @@ model Key {
 
   @@index([user_id])
 }
-
-model Model {
-  id          Int      @id @unique @default(autoincrement())
-  title       String //@db.VarChar(255)
-  slug        Slug?
-  media       Media?
-  description String
-  // type        Type   @default(notice)
-  type        String
-  user_id     String
-  user        User     @relation(fields: [user_id], references: [id])
-  createdAt   DateTime @default(now()) @map(name: "created_at")
-  updatedAt   DateTime @updatedAt @map(name: "updated_at")
-
-  @@unique([user_id])
-}
-
-model Slug {
-  id        Int      @id @unique @default(autoincrement())
-  url       String //@db.VarChar(255)
-  type      String
-  model_id  Int      @unique
-  Model     Model    @relation(fields: [model_id], references: [id])
-  // type        Type   @default(notice)
-  createdAt DateTime @default(now()) @map(name: "created_at")
-
-  @@unique([url])
-}
-
-model Media {
-  id        Int      @id @unique @default(autoincrement())
-  title     String //@db.VarChar(255)
-  url       String //@db.VarChar(255)
-  type      String
-  model_id  Int      @unique
-  Model     Model    @relation(fields: [model_id], references: [id])
-  // type        Type   @default(notice)
-  createdAt DateTime @default(now()) @map(name: "created_at")
-
-  @@unique([url])
-}
-
-// enum Type {
-//   notice
-//   out_of_stock
-//   pre_order
-// }

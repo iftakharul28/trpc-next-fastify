@@ -1,4 +1,5 @@
-import AuthForm from '@frontend/src/components/auth/Form';
+import AuthForm from '@frontend/src/components/form/AuthForm';
+
 import Link from 'next/link';
 
 const SignUpPage = async () => {
